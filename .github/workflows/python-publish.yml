@@ -30,6 +30,9 @@ jobs:
           # 必要なパッケージインストール
           pip install line-bot-sdk
       - name: Run script
+        env:
+          CHANNEL_ACCESS_TOKEN: ${{ secrets.CHANNEL_ACCESS_TOKEN }}
+          USER_ID: ${{ secrets.USER_ID }}
         run: |
           # main.pyの実行
           python test.py
